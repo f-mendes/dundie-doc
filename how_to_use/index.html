@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>How to use - Dundie Rewards CLI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "How to use";
+        var mkdocs_page_input_path = "how_to_use.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Dundie Rewards CLI
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../how_to_install/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">How to use</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#load-data">Load data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#viewing-data">Viewing data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#viewing-all-information">Viewing all information</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#filtering">Filtering</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-points">Adding points</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../roadmap/">Roadmap</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Dundie Rewards CLI</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>User Guide &raquo;</li>
+      <li>How to use</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="how-to-use">How to use</h1>
+<h2 id="load-data">Load data</h2>
+<p>Having a file <code>people.csv</code> with the following format:</p>
+<pre><code class="language-csv">Jim Halpert, Sales, Salesman, jim@dundlermifflin.com
+Dwight Schrute, Sales, Manager, schrute@dundlermifflin.com
+Gabe Lewis, Director, Manager, glewis@dundlermifflin.com
+</code></pre>
+<p>Run <code>dundie load</code> command</p>
+<pre><code class="language-py">dundie load people.csv
+</code></pre>
+<h2 id="viewing-data">Viewing data</h2>
+<h3 id="viewing-all-information">Viewing all information</h3>
+<pre><code class="language-bash">$ dundie show
+                                        Report
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ name           ┃ dept     ┃ role     ┃ email           ┃ balance ┃ last_movement   ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ Jim Halpert    │ Sales    │ Salesman │ jim@dundlermif… │ 3000    │ 2022-03-15T13:… │
+│ Dwight Schrute │ Sales    │ Manager  │ schrute@dundle… │ 2400    │ 2022-03-15T13:… │
+│ Gabe Lewis     │ Director │ Manager  │ glewis@dundler… │ 500     │ 2022-03-15T13:… │
+└────────────────┴──────────┴──────────┴─────────────────┴─────────┴─────────────────┘
+</code></pre>
+<h3 id="filtering">Filtering</h3>
+<p>Available filters are <code>--dept</code> and <code>--email</code></p>
+<pre><code class="language-bash">dundie show --dept=Sales
+                                        Report
+┏━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ name           ┃ dept  ┃ role     ┃ email            ┃ balance ┃ last_movement     ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ Jim Halpert    │ Sales │ Salesman │ jim@dundlermiff… │ 3000    │ 2022-03-15T13:44… │
+│ Dwight Schrute │ Sales │ Manager  │ schrute@dundler… │ 2400    │ 2022-03-15T13:43… │
+└────────────────┴───────┴──────────┴──────────────────┴─────────┴───────────────────┘
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> passing <code>--output=file.json</code> will save a json file with the results.</p>
+</blockquote>
+<h2 id="adding-points">Adding points</h2>
+<p>An admin user can easily add points to any user or dept.</p>
+<pre><code class="language-bash">dundie add 100 --email=jim@dundlermifflin.com
+                                        Report
+┏━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓
+┃ name        ┃ dept  ┃ role     ┃ email              ┃ balance ┃ last_movement      ┃
+┡━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━┩
+│ Jim Halpert │ Sales │ Salesman │ jim@dundlermiffli… │ 3100    │ 2022-03-15T17:14:… │
+└─────────────┴───────┴──────────┴────────────────────┴─────────┴────────────────────┘
+</code></pre>
+<p>Available selectors are <code>--email</code> and <code>--dept</code></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../how_to_install/" class="btn btn-neutral float-left" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../roadmap/" class="btn btn-neutral float-right" title="Roadmap">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../how_to_install/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../roadmap/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
